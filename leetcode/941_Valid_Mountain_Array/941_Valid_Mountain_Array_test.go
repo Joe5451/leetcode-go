@@ -20,7 +20,6 @@ type output struct {
 
 func Test_validMountainArray(t *testing.T) {
 	fmt.Println("---------- LeetCode Problem 941 ----------")
-	fmt.Println("solution1:")
 
 	questions := []question{
 		{
@@ -36,6 +35,8 @@ func Test_validMountainArray(t *testing.T) {
 			output{true},
 		},
 	}
+
+	fmt.Println("solution1:")
 
 	for _, question := range questions {
 		input := question.input
@@ -43,26 +44,8 @@ func Test_validMountainArray(t *testing.T) {
 		output := validMountainArray(input.arr)
 		fmt.Printf(", output: %v\n", output)
 	}
-	fmt.Println()
-}
 
-func Test_validMountainArray2(t *testing.T) {
-	fmt.Println("solution2:")
-
-	questions := []question{
-		{
-			input{[]int{2, 1}},
-			output{false},
-		},
-		{
-			input{[]int{3, 5, 5}},
-			output{false},
-		},
-		{
-			input{[]int{0, 3, 2, 1}},
-			output{true},
-		},
-	}
+	fmt.Println("\nsolution2:")
 
 	for _, question := range questions {
 		input := question.input
