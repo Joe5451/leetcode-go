@@ -20,7 +20,9 @@ type output struct {
 }
 
 func Test_Problem189(t *testing.T) {
-	questions := []question {
+	fmt.Println("---------- LeetCode Problem 189 ----------")
+
+	questions := []question{
 		{
 			input{[]int{1, 2, 3, 4, 5, 6, 7}, 3},
 			output{[]int{5, 6, 7, 1, 2, 3, 4}},
@@ -30,8 +32,6 @@ func Test_Problem189(t *testing.T) {
 			output{[]int{3, 99, -1, -100}},
 		},
 	}
-
-	fmt.Println("---------- LeetCode Problem 189 ----------")
 
 	for _, question := range questions {
 		nums := question.input.nums
