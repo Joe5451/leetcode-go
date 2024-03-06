@@ -16,7 +16,7 @@ type input struct {
 }
 
 type output struct {
-	mergedList []int
+	nums []int
 }
 
 type ListNode struct {
