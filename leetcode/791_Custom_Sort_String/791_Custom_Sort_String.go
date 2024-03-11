@@ -1,6 +1,7 @@
 package leetcode
 
-// time complexity is O(n), space complexity is O(n)
+// time complexity is O(m+n), space complexity is O(n)
+// m is length of order and would not exceed 26
 func customSortString(order string, s string) string {
 	result := ""
 	sCount := make(map[rune]int)
