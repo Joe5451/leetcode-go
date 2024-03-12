@@ -1,6 +1,7 @@
 package leetcode
 
-// time complexity is O(n), space complexity is O(n)
+// time complexity is O(n*m), space complexity is O(n*m)
+// m is the average length of words
 func groupAnagrams(strs []string) [][]string {
 	letterFrequencySet := make(map[[26]int][]string)
 
