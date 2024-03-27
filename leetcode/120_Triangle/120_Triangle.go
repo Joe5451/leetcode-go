@@ -5,25 +5,25 @@ import "math"
 // Bottom-up DP
 // time complexity is O(n), space complexity is O(n)
 func minimumTotal(triangle [][]int) int {
-	visited := make([][]int, len(triangle))
-	visited[0] = make([]int, 1)
-	visited[0][0] = triangle[0][0]
+	dp := make([][]int, len(triangle))
+	dp[0] = make([]int, 1)
+	dp[0][0] = triangle[0][0]
 
 	for i := 1; i < len(triangle); i++ {
-		visited[i] = make([]int, len(triangle[i]))
+		dp[i] = make([]int, len(triangle[i]))
 		for j := 0; j < len(triangle[i]); j++ {
 			if j == 0 {
-				visited[i][j] = triangle[i][j] + visited[i - 1][0]
+				dp[i][j] = triangle[i][j] + dp[i - 1][0]
 			} else if j == len(triangle[i]) - 1 {
-				visited[i][j] = triangle[i][j] + visited[i - 1][j - 1]
+				dp[i][j] = triangle[i][j] + dp[i - 1][j - 1]
 			} else {
-				visited[i][j] = triangle[i][j] + min(visited[i - 1][j], visited[i - 1][j - 1])
+				dp[i][j] = triangle[i][j] + min(dp[i - 1][j], dp[i - 1][j - 1])
 			}
 		}
 	}
 
 	min := math.MaxInt64
-	for _, num := range visited[len(triangle) - 1] {
+	for _, num := range dp[len(triangle) - 1] {
 		if num < min {
 			min = num
 		}
