@@ -8,7 +8,9 @@ package leetcode
  *     Right *TreeNode
  * }
  */
- func sumOfLeftLeaves(root *TreeNode) int {
+
+// time complexity is O(n), space complexity is O(n)
+func sumOfLeftLeaves(root *TreeNode) int {
 	if root == nil {
 		return 0
 	}
