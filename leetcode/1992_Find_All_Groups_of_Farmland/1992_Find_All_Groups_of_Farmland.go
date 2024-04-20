@@ -15,24 +15,13 @@ func findFarmland(land [][]int) [][]int {
 	return groups
 }
 
-func dfs(land [][]int, i, j int) (int, int) {
-	r2, c2 := i, j
-	for r2 + 1 < len(land) && land[r2 + 1][j] == 1 {
-		r2++
-	}
-	for c2 + 1 < len(land[0]) && land[i][c2 + 1] == 1 {
-		c2++
-	}
-
-	temp := j
-	for i <= r2 {
-		j = temp
-		for j <= c2 {
+func dfs(land [][]int, row, column int) (int, int) {
+	r2, c2 := row, column
+	for i := row; i < len(land) && land[i][column] == 1; i++ {
+		for j := column; j < len(land[0]) && land[i][j] == 1; j++ {
 			land[i][j] = 0
-			j++
+			r2, c2 = i, j
 		}
-		i++
 	}
-
 	return r2, c2
 }
